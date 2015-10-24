@@ -13,8 +13,10 @@
     <string name="login_error_message">Please Enter Password and Username</string>
     <string name="login_error_title">Ooops!</string>
     <string name="menu_logout_label">Logout</string>
+    <string name="menu_edit_friends_label">Edt Friends</string>
     <string name="empty_inbox_label">Inbox is Empty</string>
     <string name="empty_friends_label">Add Friends to Begin</string>
+    <string name="title_activity_edit_friends">EditFriendsActivity</string>
 
 
 </resources>
