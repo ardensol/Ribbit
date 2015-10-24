@@ -12,4 +12,6 @@
     <string name="sign_up_error_title">Ooops!</string>
     <string name="login_error_message">Please Enter Password and Username</string>
     <string name="login_error_title">Ooops!</string>
+    <string name="menu_logout_label">Logout</string>
+
 </resources>
