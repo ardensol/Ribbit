@@ -13,5 +13,6 @@
     <string name="login_error_message">Please Enter Password and Username</string>
     <string name="login_error_title">Ooops!</string>
     <string name="menu_logout_label">Logout</string>
+    <string name="empty_inbox_label">Inbox is Empty</string>
 
 </resources>
