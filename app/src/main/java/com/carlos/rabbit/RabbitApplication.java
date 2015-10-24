@@ -17,8 +17,5 @@ public class RabbitApplication extends Application {
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "7c1Oqllek83roYkkbaNZDYrEDOzDNRgsUoMfQY2B", "SycrRnweBuU3NxLu0oCbZuIyIgnmIcvpHXeka1EX");
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
     }
 }
