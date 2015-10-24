@@ -68,6 +68,8 @@ public class EditFriendsActivity extends ListActivity {
                             android.R.layout.simple_list_item_checked,
                             usernames);
                     setListAdapter(adapter);
+
+                    addFriendCheckmarks();
                 }
                 else {
                     Log.e(TAG, e.getMessage());
@@ -85,11 +87,42 @@ public class EditFriendsActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        mFriendsRelation.add(mUsers.get(position));
-        mCurrentUser.saveInBackground(new SaveCallback() {
+
+        if (getListView().isItemChecked(position)){
+            //save Relationship
+            mFriendsRelation.add(mUsers.get(position));
+            mCurrentUser.saveInBackground(new SaveCallback() {
+                @Override
+                public void done(ParseException e) {
+                    if(e != null) {
+                        Log.e(TAG, e.getMessage());
+                    }
+                }
+            });
+        }
+        else {
+            //remove Friend
+
+        }
+    }
+
+    private void addFriendCheckmarks() {
+        mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
             @Override
-            public void done(ParseException e) {
-                if(e != null) {
+            public void done(List<ParseUser> friends, ParseException e) {
+                if ( e == null ) {
+                    //list returned
+                    for (int i = 0; i < mUsers.size(); i++) {
+                        ParseUser user = mUsers.get(i);
+
+                        for (ParseUser friend : friends) {
+                            if (friend.getObjectId().equals(user.getObjectId())) {
+                                getListView().setItemChecked(i,true);
+                            }
+                        }
+                    }
+                }
+                else {
                     Log.e(TAG, e.getMessage());
                 }
             }
