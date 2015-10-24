@@ -18,4 +18,5 @@
     <string name="empty_friends_label">Add Friends to Begin</string>
     <string name="title_activity_edit_friends">EditFriendsActivity</string>
     <string name="error_title">Something Went Wrong!</string>
+    <string name="camera_label">Camera</string>
 </resources>
