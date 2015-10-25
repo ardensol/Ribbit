@@ -21,6 +21,7 @@
     <string name="camera_label">Camera</string>
     <string name="error_external_storage">There was a problem accessing our device external storage.</string>
     <string name="general_error">"Sorry there was an error."</string>
+    <string name="file_too_large">"file is to large "</string>
 
     <string-array name="camera_choices">
         <item>Take Picture</item>
