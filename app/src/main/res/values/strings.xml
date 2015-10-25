@@ -29,4 +29,6 @@
         <item>Choose Picture</item>
         <item>Choose Video</item>
     </string-array>
+    <string name="title_activity_recipients">Choose Recipients</string>
+    <string name="empty_recipients_list_message">Choose Some Friends First</string>
 </resources>
