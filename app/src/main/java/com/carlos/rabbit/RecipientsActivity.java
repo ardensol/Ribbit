@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -26,20 +27,24 @@ public class RecipientsActivity extends ListActivity {
     protected ParseRelation<ParseUser> mFriendsRelation;
     protected ParseUser mCurrentUser;
     protected List<ParseUser> mFriends;
+    protected FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipients);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+
+        fab = (FloatingActionButton) findViewById(R.id.action_send);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                    
             }
         });
+
+        fab.hide();
     }
 
     @Override
@@ -90,4 +95,17 @@ public class RecipientsActivity extends ListActivity {
         });
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        if (l.getCheckedItemCount() > 0) {
+            fab.show();
+        }
+        else {
+            fab.hide();
+        }
+
+
+    }
 }
