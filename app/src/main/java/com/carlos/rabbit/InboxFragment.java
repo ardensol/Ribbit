@@ -86,7 +86,7 @@ public class InboxFragment extends ListFragment {
             startActivity(intent);
         }
 
-        else (messageType.equals(ParseConstants.TYPE_VIDEO)) {
+        else  {
             Intent intent = new Intent(Intent.ACTION_VIEW, fileUri);
             intent.setDataAndType(fileUri,"video/*");
             startActivity(intent);
