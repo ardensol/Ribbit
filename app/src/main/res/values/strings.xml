@@ -32,4 +32,8 @@
     <string name="title_activity_recipients">Choose Recipients</string>
     <string name="empty_recipients_list_message">Choose Some Friends First</string>
     <string name="menu_send_label">Send</string>
+    <string name="file_send_error">There was an error with the File Selected.  Please select a different File</string>
+    <string name="error_selecting_file_title">We\'re Sorry!</string>
+    <string name="success_message_sent">message sent!</string>
+    <string name="error_sending_message">There was an error sending your message please try again.</string>
 </resources>
